@@ -1,0 +1,1061 @@
+/* Asegura que el diseño ocupe toda la pantalla */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('/static/images/fondo_web.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #212529;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.username {
+    font-weight: bold;
+    /* Aplica negrita al nombre de usuario */
+    font-size: 1.5rem;
+    /* Aumenta el tamaño del texto del nombre de usuario */
+    color: #f3f5f7;
+    /* Puedes cambiar este color si deseas */
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 123, 255, 0.8);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Navegación */
+nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+nav ul li a,
+nav ul li button {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li button:hover {
+    text-decoration: underline;
+}
+
+.auth-buttons {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column; /* Apilar los botones verticalmente */
+    gap: 10px; /* Espaciado entre los botones */
+}
+
+.profile-btn {
+    background-color: #eeb824;
+    color: rgb(7, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.profile-btn:hover {
+    background-color: #d37407;
+}
+
+.logout-btn-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Contenido principal */
+main.content {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+
+/* styles.css */
+
+/* Contenedor principal del registro de médicos */
+.medic-register-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.medic-register-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.medic-register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Campos del formulario */
+.medic-register-form input,
+.medic-register-form select,
+.medic-register-form textarea {
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Botón de envío */
+.medic-submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.medic-submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Estilo para errores del formulario */
+.medic-form-errors {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+    color: #d9534f;
+    font-size: 14px;
+}
+
+/* Estilo de los errores individuales */
+.medic-form-errors li {
+    margin-bottom: 5px;
+}
+
+
+
+/* Estilos específicos para la página de inicio de sesión */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.login-container .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-container .login-form label {
+    font-weight: bold;
+    color: #555;
+}
+
+.login-container .login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.login-container .login-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-container .login-form button:hover {
+    background-color: #0056b3;
+}
+
+.login-container p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-container p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-container p a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+
+
+/* Estilos para las características */
+.home-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-title {
+    font-size: 2rem;
+    color: #333;
+}
+
+.home-description {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Estilos para las características */
+.home-features {
+    margin-top: 20px;
+}
+
+.features-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.feature-item {
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Estilos para los enlaces */
+.cta-links {
+    margin-top: 30px;
+}
+
+.btn-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el contenedor de registro */
+.registro-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.registro-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #343a40;
+}
+
+.registro-form input {
+    background-color: #f9f9f9;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+/* Estilos específicos para la página de inicio */
+.inicio-container {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 30px auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.inicio-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.inicio-description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.inicio-links {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.inicio-links li {
+    margin: 15px 0;
+}
+
+.inicio-links .btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.inicio-links .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+}
+
+.inicio-links .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.inicio-links .btn-secondary {
+    background-color: #28a745;
+    color: #fff;
+    border: 1px solid #28a745;
+}
+
+.inicio-links .btn-secondary:hover {
+    background-color: #218838;
+}
+
+
+
+/* Estilos específicos para la página de lista de pacientes */
+.lista-pacientes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título de la página */
+.lista-pacientes-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la lista de pacientes */
+.lista-pacientes-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+/* Estilo de cada ítem de la lista de pacientes */
+.lista-pacientes-container ul li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del enlace para ver detalles */
+.lista-pacientes-container ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.lista-pacientes-container ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el enlace de regreso al menú */
+.lista-pacientes-container a {
+    margin-top: 20px;
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.lista-pacientes-container a:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilos personalizados para Mis Chats */
+.chat-list-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.chat-list-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.chat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chat-list-item {
+    margin-bottom: 10px;
+}
+
+.chat-link {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    color: #007bff;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.chat-link:hover {
+    background-color: #f0f8ff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.new-chat-button {
+    display: block;
+    text-align: center;
+    margin: 20px auto 0;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.new-chat-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+
+/* Estilos personalizados para el template del chat */
+.chat-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f7f6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.chat-header {
+    text-align: center;
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.messages-container {
+    margin-bottom: 20px;
+}
+
+.messages-title {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.messages-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.message-item {
+    background-color: #fff;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.message-item.sent {
+    background-color: #e0f7fa; /* Mensajes enviados */
+    align-self: flex-end;
+}
+
+.message-item.received {
+    background-color: #fff3e0; /* Mensajes recibidos */
+    align-self: flex-start;
+}
+
+.message-sender {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.message-content {
+    margin-top: 5px;
+    color: #555;
+}
+
+.no-messages {
+    text-align: center;
+    color: #999;
+}
+
+.message-form-container {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+}
+
+.form-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.message-form input, 
+.message-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.send-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-button:hover {
+    background-color: #218838;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link-button {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.back-link-button:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilos personalizados para iniciar conversación */
+.start-chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.start-chat-header {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.start-chat-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.start-chat-form input, 
+.start-chat-form select, 
+.start-chat-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.start-chat-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-chat-button:hover {
+    background-color: #0056b3;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link-button {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.back-link-button:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilos para la sección About Me */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+}
+
+.photo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ccc;
+}
+
+.about-text {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.about-text h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+/* Estilos para la Historia Clínica */
+.historia-clinica h2 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.historia-clinica h3 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-top: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.historia-clinica p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.historia-clinica ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.historia-clinica li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.historia-clinica li strong {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.historia-clinica a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-left: 10px;
+}
+
+.historia-clinica a:hover {
+    text-decoration: underline;
+}
+
+.historia-clinica form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.historia-clinica form label {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.historia-clinica form input, 
+.historia-clinica form textarea, 
+.historia-clinica form button {
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.historia-clinica form textarea {
+    height: 150px;
+}
+
+.historia-clinica form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+.historia-clinica form button:hover {
+    background-color: #218838;
+}
+
+.historia-clinica a.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.historia-clinica a.btn-back:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para la lista de entradas de evolución */
+.historia-clinica .entrada-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.historia-clinica .entrada-item a {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.historia-clinica .entrada-item a:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el botón de "Volver a la lista de pacientes" */
+.historia-clinica .btn-back-list {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+.historia-clinica .btn-back-list:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .historia-clinica h2 {
+        font-size: 1.8rem;
+    }
+
+    .historia-clinica h3 {
+        font-size: 1.3rem;
+    }
+
+    .historia-clinica form input, 
+    .historia-clinica form textarea, 
+    .historia-clinica form button {
+        font-size: 1rem;
+    }
+
+    .historia-clinica .entrada-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .historia-clinica .entrada-item a {
+        margin-top: 10px;
+    }
+}
+
+
+/* Estilos específicos para la entrada de evolución */
+.entrada-evolucion {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.entrada-evolucion-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.entrada-evolucion-detail p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.entrada-evolucion-texto {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 25px;
+}
+
+.entrada-evolucion-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.entrada-evolucion-actions .btn {
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: #fff;
+    border: 1px solid #ffc107;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: #fff;
+    border: 1px solid #dc3545;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+}
+
+/* Para asegurar que los botones no se sobrepongan con otros estilos */
+.entrada-evolucion .btn {
+    font-family: 'Arial', sans-serif;
+}

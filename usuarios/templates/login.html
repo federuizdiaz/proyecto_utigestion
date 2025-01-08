@@ -1,0 +1,18 @@
+{% extends 'hospital_uti/base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <div class="login-container">
+    <h2>Iniciar sesión</h2>
+    <form method="POST" class="login-form">
+      {% csrf_token %}
+      <label for="username">Nombre de usuario:</label>
+      <input type="text" name="username" id="username" required>
+      <label for="password">Contraseña:</label>
+      <input type="password" name="password" id="password" required>
+      <button type="submit">Iniciar sesión</button>
+    </form>
+    <p>¿Aún no estás registrado? <a href="{% url 'registro' %}">Regístrate aquí</a>.</p>
+  </div>
+{% endblock %}

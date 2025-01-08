@@ -1,0 +1,14 @@
+{% extends 'hospital_uti/base.html' %}
+
+{% block title %}Inicio - Hospital UTI{% endblock %}
+
+{% block content %}
+<div class="inicio-container">
+    <h2 class="inicio-title">Bienvenido al sistema de gestión de pacientes</h2>
+    <p class="inicio-description">Desde aquí puedes gestionar los pacientes de la unidad de cuidados intensivos.</p>
+    <ul class="inicio-links">
+        <li><a href="{% url 'lista_pacientes' %}" class="btn btn-primary">Ver lista de pacientes</a></li>
+        <li><a href="{% url 'registrar_paciente' %}" class="btn btn-secondary">Registrar un nuevo paciente</a></li>
+    </ul>
+</div>
+{% endblock %}

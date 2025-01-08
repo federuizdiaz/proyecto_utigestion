@@ -1,0 +1,38 @@
+{% extends 'hospital_uti/base.html' %}
+
+{% block title %}Historia Clínica de {{ paciente.nombre }}{% endblock %}
+
+{% block content %}
+<div class="historia-clinica">
+    <h2>Historia Clínica de {{ paciente.nombre }} {{ paciente.apellido }}</h2>
+
+    <h3>Ingreso - Admision</h3>
+    <p>{{ paciente.historia_clinica|linebreaksbr }}</p>
+
+    <h3>Evolución</h3>
+    <ul>
+        {% for entrada in entradas %}
+        <li class="entrada-item">
+            <div>
+                <strong>{{ entrada.usuario }}</strong>
+                <strong>{{ entrada.asunto }}</strong> - {{ entrada.fecha_creacion|date:"d/m/Y H:i" }}
+            </div>
+            
+            
+            <a href="{% url 'ver_entrada_evolucion' entrada_id=entrada.id %}">Ver más</a>
+        </li>
+        {% empty %}
+        <li>No hay entradas de evolución para este paciente.</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Nueva observación</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+    <a href="{% url 'lista_pacientes' %}" class="btn-back-list">Volver a la lista de pacientes</a>
+</div>
+{% endblock %}

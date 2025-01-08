@@ -1,0 +1,17 @@
+{% extends 'hospital_uti/base.html' %}
+
+{% load static %}
+
+{% block title %}Acerca de Mí{% endblock %}
+
+{% block content %}
+    <div class="about-container">
+        <div class="photo-container">
+            <img src="{% static 'images/frd.jpg' %}" alt="Foto de Federico Ruiz Díaz" class="profile-photo">
+        </div>
+        <div class="about-text">
+            <h2>¡Hola!</h2>
+            <p>Soy <strong>Federico Ruiz Díaz</strong>, oriundo de <strong>Corrientes Capital</strong>, y actualmente estoy cursando la <strong>Diplomatura en Data Science</strong> en <strong>CODERHOUSE</strong>.</p>
+        </div>
+    </div>
+{% endblock %}

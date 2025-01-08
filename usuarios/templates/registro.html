@@ -1,0 +1,20 @@
+{% extends 'hospital_uti/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="medic-register-container">
+    <h2>Registro de Usuario</h2>
+    <form method="post" class="medic-register-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if form.errors %}
+            <ul class="medic-form-errors">
+                {% for field, errors in form.errors.items %}
+                    <li><strong>{{ field }}:</strong> {{ errors|join:", " }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <button type="submit" class="medic-submit-btn">Registrarse</button>
+    </form>
+</div>
+{% endblock %}

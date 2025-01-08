@@ -1,0 +1,22 @@
+{% extends "hospital_uti/base.html" %}
+
+{% block title %}Lista de Pacientes - Hospital UTI{% endblock %}
+
+{% block content %}
+    <div class="lista-pacientes-container">
+        <h2>Lista de pacientes</h2>
+        
+        <ul>
+            {% for paciente in pacientes %}
+                <li>
+                    {{ paciente.nombre }} {{ paciente.apellido }}
+                    <a href="{% url 'detalles_paciente' paciente_id=paciente.id %}">Ver detalles</a>
+                </li>
+            {% empty %}
+                <li>No hay pacientes registrados.</li>
+            {% endfor %}
+        </ul>
+        
+        <a href="{% url 'inicio_pacientes' %}">Regresar al menú</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "hospital_uti/base.html" %}
+
+{% block title %}Registrar Paciente - Hospital UTI{% endblock %}
+
+{% block content %}
+    <h2>Registrar nuevo paciente</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrar</button>
+    </form>
+
+    <br>
+    <a href="{% url 'inicio_pacientes' %}">Regresar al menú</a>
+{% endblock %}

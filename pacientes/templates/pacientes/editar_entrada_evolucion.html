@@ -1,0 +1,14 @@
+{% extends 'hospital_uti/base.html' %}
+
+{% block content %}
+  <h1>Editar Entrada de Evolución</h1>
+  
+  <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+  </form>
+
+  <br><br>
+  <a href="{% url 'detalles_paciente' paciente_id=entrada.paciente.id %}">Cancelar</a>
+{% endblock %}

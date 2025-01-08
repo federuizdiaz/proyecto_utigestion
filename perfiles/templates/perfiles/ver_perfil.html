@@ -1,0 +1,22 @@
+{% extends "hospital_uti/base.html" %}
+
+{% block title %}Ver Perfil - Hospital UTI{% endblock %}
+
+{% block content %}
+<h2>Perfil de {{ perfil.usuario.username }}</h2>
+<p><strong>Nombre completo:</strong> {{ perfil.usuario.nombre }} {{ perfil.usuario.apellido }}</p>
+<p><strong>Número de Matrícula Profesional:</strong> {{ perfil.usuario.nro_matricula_profesional }}</p>
+<p><strong>Especialidad:</strong> {{ perfil.usuario.especialidad }}</p>
+<p><strong>Email:</strong> {{ perfil.usuario.email }}</p>
+<p><strong>Teléfono:</strong> {{ perfil.usuario.telefono }}</p>
+<p><strong>Dirección:</strong> {{ perfil.usuario.direccion }}</p>
+<p><strong>Fecha de nacimiento:</strong> {{ perfil.usuario.fecha_nacimiento }}</p>
+<p><strong>Website:</strong> <a href="{{ perfil.website }}" target="_blank">{{ perfil.website }}</a></p>
+{% if perfil.imagen %}
+    <img src="{{ perfil.imagen.url }}" alt="Imagen de perfil" width="150">
+{% else %}
+    <p>No se ha subido ninguna imagen.</p>
+{% endif %}
+<a href="{% url 'editar_perfil' %}">Editar perfil</a>
+<a href="{% url 'borrar_perfil' %}">Borrar perfil</a>
+{% endblock %}

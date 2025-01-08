@@ -1,0 +1,53 @@
+{% extends 'hospital_uti/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="home-container">
+
+  <div class="home-card">
+    <h2 class="home-title">¡Bienvenido!</h2>
+      <p class="home-description">
+        UTI Gestión es una plataforma integral que optimiza la gestión hospitalaria, facilita la comunicación
+        y proporciona acceso rápido a la información médica de los pacientes. </p>
+
+      <div class="home-features">
+        <h3 class="features-title">¿Qué puedes hacer?</h3>
+
+        <div class="features-grid">
+
+          <div class="feature-item">
+            <img src="{% static 'images/gestion_perfiles.png' %}" alt="Gestionar perfiles">
+            <p>Gestionar perfiles de usuarios.</p>
+          </div>
+
+          <div class="feature-item">
+            <img src="{% static 'images/mensajes_privados.png' %}" alt="Mensajes privados">
+            <p>Intercambiar mensajes privados con otros profesionales.</p>
+          </div>
+
+          <div class="feature-item">
+            <img src="{% static 'images/historiales_medicos.png' %}" alt="Historiales médicos">
+            <p>Consultar historiales médicos de pacientes.</p>
+          </div>
+
+          <div class="feature-item">
+            <img src="{% static 'images/reportes_gestion.png' %}" alt="Reportes de gestión">
+            <p>Acceder a reportes de gestión hospitalaria. (Próximamente)</p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="cta-links">
+        <p>Si aún no tienes una cuenta, <a href="{% url 'registro' %}" class="btn-link">regístrate aquí</a>.</p>
+        <p>¿Ya tienes cuenta? <a href="{% url 'login' %}" class="btn-link">Inicia sesión aquí</a>.</p>
+      </div>
+
+  </div>
+
+</div>
+{% endblock %}

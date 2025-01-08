@@ -1,0 +1,35 @@
+{% extends 'hospital_uti/base.html' %}
+
+{% block title %}Entrada de Evolución: {{ entrada.asunto }}{% endblock %}
+
+{% block content %}
+<div class="entrada-evolucion">
+    <h2 class="entrada-evolucion-title">Entrada de Evolución: {{ entrada.asunto }}</h2>
+
+    <div class="entrada-evolucion-detail">
+        <p><strong>Asunto:</strong> {{ entrada.asunto }}</p>
+        <p><strong>Profesional:</strong> {{ entrada.usuario }}</p>
+        <p><strong>Fecha de Creación:</strong> {{ entrada.fecha_creacion|date:"d/m/Y H:i" }}</p>
+        <p><strong>Texto Completo:</strong></p>
+        <p class="entrada-evolucion-texto">{{ entrada.texto_completo|linebreaksbr }}</p>
+
+        {% if entrada.imagen %}
+            <p><strong>Imagen:</strong></p>
+            <img src="{{ entrada.imagen.url }}" alt="Imagen de la entrada" style="max-width: 100%; height: auto;">
+        {% endif %}
+    </div>
+
+    {% if entrada.usuario == request.user %}
+        <div class="entrada-evolucion-actions">
+            <a href="{% url 'editar_entrada_evolucion' entrada_id=entrada.id %}" class="btn btn-edit">Editar</a>
+
+            <form method="post" action="{% url 'eliminar_entrada' entrada_id=entrada.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-delete" onclick="return confirm('¿Seguro que deseas eliminar esta entrada?');">Eliminar</button>
+            </form>
+        </div>
+    {% endif %}
+
+    <a href="{% url 'detalles_paciente' paciente_id=entrada.paciente.id %}" class="btn btn-back">Volver a la historia clínica del paciente</a>
+</div>
+{% endblock %}

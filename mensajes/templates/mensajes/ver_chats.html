@@ -1,0 +1,27 @@
+{% extends 'hospital_uti/base.html' %}
+
+{% load static %}
+
+{% block title %}Mis Chats{% endblock %}
+
+{% block content %}
+<div class="chat-list-container">
+    <h2 class="chat-list-title">Mis Chats</h2>
+    <ul class="chat-list">
+        {% for chat in chats %}
+            <li class="chat-list-item">
+                {% if chat.user_chat_1 == request.user %}
+                    <a href="{% url 'ver_chat' chat.id %}" class="chat-link">
+                        {{ chat.user_chat_2.username }}
+                    </a>
+                {% else %}
+                    <a href="{% url 'ver_chat' chat.id %}" class="chat-link">
+                        {{ chat.user_chat_1.username }}
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'nuevo_chat' %}" class="new-chat-button">Iniciar nueva conversación</a>
+</div>
+{% endblock %}

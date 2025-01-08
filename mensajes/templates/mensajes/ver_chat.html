@@ -1,0 +1,44 @@
+{% extends 'hospital_uti/base.html' %}
+
+{% load static %}
+
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+    <h2 class="chat-header">Conversación con 
+        {% if chat.user_chat_1 != request.user %}
+            {{ chat.user_chat_1 }}
+        {% else %}
+            {{ chat.user_chat_2 }}
+        {% endif %}
+    </h2>
+
+    <div class="messages-container">
+        <h3 class="messages-title">Mensajes</h3>
+        <ul class="messages-list">
+            {% for mensaje in mensajes %}
+                <li class="message-item {% if mensaje.de_user == request.user %}sent{% else %}received{% endif %}">
+                    <strong class="message-sender">{{ mensaje.de_user.username }}:</strong> 
+                    <span class="message-content">{{ mensaje.contenido }}</span>
+                </li>
+            {% empty %}
+                <li class="no-messages">No hay mensajes en esta conversación.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="message-form-container">
+        <h3 class="form-title">Enviar mensaje</h3>
+        <form method="post" class="message-form">
+            {% csrf_token %}
+            {{ formulario_envio_mensaje.as_p }}
+            <button type="submit" class="send-button">Enviar</button>
+        </form>
+    </div>
+
+    <div class="back-link">
+        <a href="{% url 'ver_chats' %}" class="back-link-button">Volver a mis chats</a>
+    </div>
+</div>
+{% endblock %}

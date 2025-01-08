@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}UTI GESTION{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    {% block extra_css %}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>UTI GESTION</h1>
+            {% if request.user.is_authenticated %}
+            <p>Bienvenido, <span class="username">{{ request.user.username }}</span></p>
+            <div>
+                {% if request.user.perfil.imagen %}
+                <img src="{{ request.user.perfil.imagen.url }}" alt="Avatar"
+                    style="width: 100px; height: 100px; max-width: 100px; max-height: 100px; border-radius: 50%; object-fit: cover;">
+                {% else %}
+                <img src="{% static 'avatars/default_avatar.png' %}" alt="Avatar por defecto"
+                    style="width: 100px; height: 100px; max-width: 100px; max-height: 100px; border-radius: 50%; object-fit: cover;">
+                {% endif %}
+            </div>
+            {% endif %}
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'inicio_pacientes' %}">Pacientes</a></li>
+                <li><a href="{% url 'ver_chats' %}">Mensajería</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                <li><a href="{% url 'registro' %}">Registro</a></li>
+                {% endif %}
+                <li><a href="{% url 'about' %}">About me</a></li>
+            </ul>
+        </nav>
+
+        {% if user.is_authenticated %}
+        <div class="auth-buttons">
+            <a href="{% url 'ver_perfil' %}" class="profile-btn">Ver perfil</a>
+            <form action="{% url 'logout' %}" method="POST" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">Cerrar sesión</button>
+            </form>
+        </div>
+        {% endif %}
+
+        <main class="content">
+            {% block content %}
+
+            {% endblock %}
+        </main>
+
+        <footer>
+            <p>&copy; 2025 UTI GESTION - Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
